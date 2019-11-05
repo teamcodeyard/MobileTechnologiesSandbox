@@ -8,17 +8,30 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "eu.codeyard.sandbox"
-        minSdkVersion 15
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
     }
     defaultConfig {
         javaCompileOptions {
@@ -38,4 +51,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.jakewharton.retrofit:retrofit1-okhttp3-client:1.0.2'
+    implementation 'com.google.api-client:google-api-client-gson:1.27.0'
+
+    implementation 'com.github.iammert:MultiSearchView:0.1'
+    implementation 'com.github.trieulh-ict:SimpleGenericAdapter:0.3.0'
+
+
 }
