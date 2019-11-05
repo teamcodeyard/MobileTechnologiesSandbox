@@ -16,12 +16,15 @@ import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import eu.codeyard.sandbox.event.MovieOpened;
 import eu.codeyard.sandbox.model.Movie;
 import eu.codeyard.sandbox.model.MovieSearchResult;
 import eu.codeyard.sandbox.network.MovieApi;
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 .addItemModule(new MovieViewModule().addOnItemSelectedListener(new OnItemSelectedListener<Movie>() {
                     @Override
                     public void onItemSelected(int i, Movie movie) {
-                        Toast.makeText(MainActivity.this, movie.getTitle(), Toast.LENGTH_LONG).show();
+                        EventBus.getDefault().post(new MovieOpened(movie));
                     }
                 }))
                 .addEmptyModule(new MovieEmptyModule())
@@ -151,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void success(MovieSearchResult searchResult, Response response) {
                 Log.d("MOVIES", searchResult.toString());
-                if (searchResult != null && searchResult.getSearchResult().size() > 0) {
+                if (searchResult.getSearchResult().size() > 0) {
                     updateList(searchResult);
                 } else {
                     setEmptyList();
@@ -166,5 +169,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Subscribe
+    public void onMovieSelected(MovieOpened event) {
+        MovieDetailActivity_.intent(this).movie(event.getMovie()).start();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
 
 }

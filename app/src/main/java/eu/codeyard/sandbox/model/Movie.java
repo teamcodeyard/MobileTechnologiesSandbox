@@ -1,10 +1,14 @@
 package eu.codeyard.sandbox.model;
 
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 
 import io.trieulh.simplegenericadapter.diff.Diffable;
 
-public class Movie implements Diffable {
+public class Movie implements Diffable, Serializable {
 
     @SerializedName("Title")
     protected String title;
