@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
-
+def AAVersion = '4.6.0'
+dependencies {
+    annotationProcessor "org.androidannotations:androidannotations:$AAVersion"
+    implementation "org.androidannotations:androidannotations-api:$AAVersion"
+}
 android {
     compileSdkVersion 29
     defaultConfig {
@@ -14,6 +18,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "androidManifestFile": "$projectDir/src/main/AndroidManifest.xml".toString()
+                ]
+            }
         }
     }
 }
