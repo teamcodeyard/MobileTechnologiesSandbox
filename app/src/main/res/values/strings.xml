@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DEIK Movie database</string>
+    <string name="movie_info_year">Year: %1$s</string>
+    <string name="movie_info_genre">Genre: %1$s</string>
+    <string name="movie_info_runtime">Runtime: %1$s</string>
+    <string name="movie_info_director">Director: %1$s</string>
+    <string name="movie_info_actors">Actors: %1$s</string>
 </resources>

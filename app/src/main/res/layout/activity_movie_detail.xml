@@ -6,28 +6,194 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Search for someting!"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/cover"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        tools:src="@drawable/ic_launcher_background" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/infoContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/yearLabel"
+                    style="@style/Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Text" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/genreLabel"
+                    style="@style/Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Text" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/runtimeLabel"
+                    style="@style/Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Text" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/directorLabel"
+                    style="@style/Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Text" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/actorsLabel"
+                    style="@style/Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Text" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/cover"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/infoContainer"
+                tools:src="@drawable/ic_launcher_background" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ratingContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cover">
+
+                <LinearLayout
+                    android:id="@+id/ratingContainer1"
+                    style="@style/RatingContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/ratingContainer2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingTitle1"
+                        style="@style/RatingTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Title" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingValue1"
+                        style="@style/RatingValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Rating" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ratingContainer2"
+                    style="@style/RatingContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@+id/ratingContainer3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ratingContainer1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingTitle2"
+                        style="@style/RatingTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Title" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingValue2"
+                        style="@style/RatingValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Rating" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ratingContainer3"
+                    style="@style/RatingContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/ratingContainer2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingTitle3"
+                        style="@style/RatingTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Title" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ratingValue3"
+                        style="@style/RatingValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="Rating" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/plotLabel"
+                style="@style/Label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ratingContainer"
+                tools:text="Text" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
