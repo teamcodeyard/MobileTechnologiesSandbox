@@ -110,7 +110,8 @@ public class MovieDetailActivity extends AppCompatActivity {
                 percentTextLabels.get(i).setText(getResources().getString(R.string.percent, (int) rating.getPercent()));
                 ratingContainers.get(i).setVisibility(View.VISIBLE);
                 ratingContainers.get(i).setAlpha(0f);
-                ratingContainers.get(i).animate().alpha(1f).setDuration(500).start();
+                ratingContainers.get(i).setTranslationY(-40f * (i + 1));
+                ratingContainers.get(i).animate().alpha(1f).translationY(0).setDuration(700 + i * 200).start();
             }
 
         }

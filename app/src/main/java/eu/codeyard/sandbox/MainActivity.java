@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new SimpleGenericAdapter.Builder()
                 .addItemAnimation(SimpleAnimationType.SLIDE_IN_BOTTOM)
-                .addItemModule(new MovieViewModule().addOnItemSelectedListener(new OnItemSelectedListener<Movie>() {
+                .addItemModule(new MovieViewModule(this).addOnItemSelectedListener(new OnItemSelectedListener<Movie>() {
                     @Override
                     public void onItemSelected(int i, Movie movie) {
                         EventBus.getDefault().post(new MovieOpened(movie));
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MOVIES", searchResult.toString());
                 if (searchResult.getSearchResult().size() > 0) {
                     updateList(searchResult, page);
-                } else {
+                } else if (page == 1) {
                     setEmptyList();
                 }
 
