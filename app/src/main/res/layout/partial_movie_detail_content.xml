@@ -55,17 +55,16 @@
             android:text="@string/movie_info_runtime"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/genreTitleLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/genreLabel" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/runtimeLabel"
             style="@style/ExtraInfoValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@id/genreLabel"
+            app:layout_constraintTop_toTopOf="@+id/runtimeTitleLabel"
             tools:text="Text" />
 
 
@@ -79,7 +78,7 @@
             android:text="@string/movie_info_director"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/runtimeTitleLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/runtimeLabel" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -87,10 +86,9 @@
             style="@style/ExtraInfoValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@id/runtimeLabel"
+            app:layout_constraintTop_toTopOf="@+id/directorTitleLabel"
             tools:text="Text" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -103,17 +101,16 @@
             android:text="@string/movie_info_actors"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/directorTitleLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/directorLabel" />
 
 
         <com.adroitandroid.chipcloud.ChipCloud
             android:id="@+id/actorList"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@id/directorLabel" />
+            app:layout_constraintTop_toTopOf="@+id/actorsTitleLabel" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
