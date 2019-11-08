@@ -3,6 +3,7 @@ package eu.codeyard.sandbox.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MovieDetail extends Movie {
@@ -126,5 +127,9 @@ public class MovieDetail extends Movie {
 
     public void setRatings(List<MovieRating> ratings) {
         this.ratings = ratings;
+    }
+
+    public String[] getActorList() {
+        return actors.split(",");
     }
 }

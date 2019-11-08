@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 .attachTo(listView)
                 .build();
         setEmptyList();
+        search("Star wars", 1);
     }
 
     @UiThread
@@ -133,9 +134,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @UiThread
-    void updateList(MovieSearchResult searchResult) {
+    void updateList(MovieSearchResult searchResult, int page) {
         List<Diffable> newList = new ArrayList<>();
-        newList.addAll(adapter.getItems());
+        if (page > 1) {
+            newList.addAll(adapter.getItems());
+        }
         newList.addAll(searchResult.getSearchResult());
         adapter.setItems(newList);
     }
@@ -147,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Background
-    public void search(String term, int page) {
+    public void search(String term, final int page) {
         this.lastSearchTerm = term;
         this.lastSearchPage = page;
         movieApi.search(term, page, new Callback<MovieSearchResult>() {
@@ -155,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             public void success(MovieSearchResult searchResult, Response response) {
                 Log.d("MOVIES", searchResult.toString());
                 if (searchResult.getSearchResult().size() > 0) {
-                    updateList(searchResult);
+                    updateList(searchResult, page);
                 } else {
                     setEmptyList();
                 }
@@ -164,7 +167,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void failure(RetrofitError error) {
-                setEmptyList();
+                if (page == 1) {
+                    setEmptyList();
+                }
             }
         });
     }

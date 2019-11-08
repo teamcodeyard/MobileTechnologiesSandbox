@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">DEIK Movie database</string>
     <string name="movie_info_year">Year: %1$s</string>
-    <string name="movie_info_genre">Genre: %1$s</string>
-    <string name="movie_info_runtime">Runtime: %1$s</string>
-    <string name="movie_info_director">Director: %1$s</string>
-    <string name="movie_info_actors">Actors: %1$s</string>
+    <string name="movie_info_genre">Genre</string>
+    <string name="movie_info_runtime">Runtime</string>
+    <string name="movie_info_director">Director</string>
+    <string name="movie_info_actors">Actors</string>
+    <string name="movie_info_plot">Plot</string>
+    <string name="percent">%1$d%%</string>
+
+
+    <string name="simple_view_behavior">com.zoonref.viewbehavior.SimpleViewBehavior</string>
+    <string name="animation_view_behavior">com.zoonref.viewbehavior.AnimationViewBehavior</string>
 </resources>

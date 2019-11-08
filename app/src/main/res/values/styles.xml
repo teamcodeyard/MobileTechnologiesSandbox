@@ -8,6 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
     <style name="Label">
         <item name="android:textSize">18sp</item>
         <item name="android:gravity">center</item>
@@ -23,6 +32,34 @@
 
     <style name="RatingValue" parent="Label">
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="RatingCircle">
+        <item name="bgColor">@color/colorAccent</item>
+        <item name="fgColorEnd">@color/colorPrimary</item>
+        <item name="fgColorStart">@color/colorPrimaryDark</item>
+        <item name="startAngle">0</item>
+        <item name="strokeWidth">10dp</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+
+    <style name="RatingLabel" parent="Label">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lines">2</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ExtraInfoTitle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ExtraInfoValue">
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
     </style>
 
 
